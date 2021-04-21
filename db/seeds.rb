@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Adoption.destroy_all
+Comment.destroy_all
 Pet.destroy_all
 Shelter.destroy_all
 Owner.destroy_all
@@ -31,5 +32,8 @@ pet5 = Pet.create(name: "Chester", image: "https://cdn.cnn.com/cnnnext/dam/asset
 
 adoption1 = Adoption.create(owner_id: owner1.id, pet_id: pet4.id)
 adoption2 = Adoption.create(owner_id: owner2.id, pet_id: pet5.id)
+
+comment1 = Comment.create(owner_id: owner1.id, shelter_id: shelter2.id, message: 'Thank you')
+comment2 = Comment.create(owner_id: owner2.id, shelter_id: shelter3.id, message: 'I love this shelter')
 
 puts "Seeds done."

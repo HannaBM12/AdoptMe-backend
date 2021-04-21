@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_19_194641) do
+ActiveRecord::Schema.define(version: 2021_04_21_180655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 2021_04_19_194641) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["owner_id"], name: "index_adoptions_on_owner_id"
     t.index ["pet_id"], name: "index_adoptions_on_pet_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "owner_id", null: false
+    t.bigint "shelter_id", null: false
+    t.string "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["owner_id"], name: "index_comments_on_owner_id"
+    t.index ["shelter_id"], name: "index_comments_on_shelter_id"
   end
 
   create_table "owners", force: :cascade do |t|
@@ -56,5 +66,7 @@ ActiveRecord::Schema.define(version: 2021_04_19_194641) do
 
   add_foreign_key "adoptions", "owners"
   add_foreign_key "adoptions", "pets"
+  add_foreign_key "comments", "owners"
+  add_foreign_key "comments", "shelters"
   add_foreign_key "pets", "shelters"
 end

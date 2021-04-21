@@ -27,7 +27,7 @@ class AdoptionsController < ApplicationController
 
     def adoption_params
         # byebug 
-        params.permit(:ownerId, :petId)
+        params.permit(:owner_id, :pet_id)
         ### owner_id, pet_id
 
     end
