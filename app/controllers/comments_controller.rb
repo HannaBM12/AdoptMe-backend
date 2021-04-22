@@ -12,14 +12,22 @@ class CommentsController < ApplicationController
 
     end
 
+    def update
+        comment = Comment.find(params[:id])
+        comment.update(update_params)
+        render json: comment
+    end
+
 
     private
 
     def comment_params
         # byebug 
         params.permit(:owner_id, :shelter_id, :message)
-        ### owner_id, pet_id
+    end
 
+    def update_params
+        params.permit(:message)
     end
 
 end
