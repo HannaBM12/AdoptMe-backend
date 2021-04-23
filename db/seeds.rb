@@ -49,7 +49,8 @@ pet21= Pet.create(name: "Venus", image:"https://www.marylandzoo.org/wp-content/u
 adoption1 = Adoption.create(owner_id: owner1.id, pet_id: pet4.id)
 adoption2 = Adoption.create(owner_id: owner2.id, pet_id: pet5.id)
 
-comment1 = Comment.create(owner_id: owner1.id, shelter_id: shelter2.id, message: 'Thank you')
-comment2 = Comment.create(owner_id: owner2.id, shelter_id: shelter3.id, message: 'I love this shelter')
+comment1 = Comment.create(owner_id: owner1.id, shelter_id: shelter2.id, message: 'Great Shelter and Love their Service')
+comment2 = Comment.create(owner_id: owner2.id, shelter_id: shelter1.id, message: 'There are a variety of cats and dogs to choose from')
+comment3 = Comment.create(owner_id: owner3.id, shelter_id: shelter3.id, message: 'The people that work here are all, genuine animal lovers')
 
 puts "Seeds done."
